@@ -10,5 +10,9 @@ namespace OrderProcessing.DAO
 {
     interface IOrdersDAO : IGenericDAO<Order>
     {
+        void UpdateOrderItem(string sku, int quantity, string ordernumber);
+
+        void InsertOrderItem(string sku, string Ordernumber ,int Quantity);
+       
     }
 }

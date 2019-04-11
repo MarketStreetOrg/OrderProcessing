@@ -172,11 +172,14 @@
     <Compile Include="Database\Sql\IsqlDAO.cs" />
     <Compile Include="Database\Sql\SqlDAO.cs" />
     <Compile Include="Domain\Order.cs" />
+    <Compile Include="Domain\Price.cs" />
     <Compile Include="Service\IOrderService.cs" />
     <Compile Include="Service\Implementation\OrderService.cs" />
+    <Compile Include="Service\IService.cs" />
     <Compile Include="Utilities\AOP\LoggingAspect.cs" />
     <Compile Include="Utilities\Column.cs" />
     <Compile Include="Utilities\Entity.cs" />
+    <Compile Include="Utilities\Exceptions\EmptyOrderException.cs" />
     <Compile Include="Utilities\Exceptions\RecordExistsException.cs" />
     <Compile Include="Utilities\IniFile.cs" />
     <Compile Include="Utilities\Messaging\implementation\DirectRabbitMQProducer.cs" />

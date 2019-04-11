@@ -11,15 +11,15 @@ namespace OrderProcessing.Database
     public abstract class SqlDAO
     {
         //TODO: Create a connection accessor and use it here
-        protected static SqlConnection Con=new SqlConnection();
-        protected static SqlCommand Com=new SqlCommand();
-        protected static SqlDataAdapter DataAdapter=new SqlDataAdapter();
-        protected static SqlDataReader Reader;
+        protected SqlConnection Con=new SqlConnection();
+        protected SqlCommand Com=new SqlCommand();
+        protected SqlDataAdapter DataAdapter=new SqlDataAdapter();
+        protected SqlDataReader Reader;
         protected string Query;
  
         public SqlDAO()
         {
-            GlobalConfigurations.Configuration = new AzureCloudConfig();
+            GlobalConfigurations.Configuration = new LocalSQLConfig();
         }
 
 
@@ -36,6 +36,7 @@ namespace OrderProcessing.Database
 
             if (Connected())
             {
+                Com.Dispose();
                 Con.Close();
             }
 

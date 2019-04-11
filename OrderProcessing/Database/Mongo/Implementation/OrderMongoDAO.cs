@@ -3,6 +3,7 @@ using OrderProcessing.Utilities.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace OrderProcessing.Database.Mongo.Implementation
 {
@@ -23,6 +24,11 @@ namespace OrderProcessing.Database.Mongo.Implementation
             throw new NotImplementedException();
         }
 
+        public Task<List<Order>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Order GetByID(int id)
         {
             throw new NotImplementedException();
@@ -38,7 +44,7 @@ namespace OrderProcessing.Database.Mongo.Implementation
             throw new NotImplementedException();
         }
 
-        public void Update(Order Model)
+        public Order Update(Order Model)
         {
             throw new NotImplementedException();
         }

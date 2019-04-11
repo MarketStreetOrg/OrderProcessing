@@ -56,9 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Controllers\IOrderService.cs" />
     <Compile Include="Controllers\OrderControllerTests.cs" />
-    <Compile Include="Controllers\OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

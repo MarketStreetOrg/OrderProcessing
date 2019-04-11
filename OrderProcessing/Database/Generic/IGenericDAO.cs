@@ -12,8 +12,9 @@ namespace OrderProcessing.DAO.Generic
         T GetByID(int id);
         T GetByName(string name);
         void Save(T model);
-        void Update(T Model);
+        T Update(T Model);
         void Delete(int id);
         Boolean Exists(T model);
+        Task<List<T>> GetAllAsync();
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace OrderProcessing.Service
+﻿using OrderProcessing.Domain;
+
+namespace OrderProcessing.Service
 {
-    internal interface IOrderService
+    public interface IOrderService: IService<Order>
     {
     }
 }

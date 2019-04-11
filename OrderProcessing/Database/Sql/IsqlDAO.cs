@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OrderProcessing.Database
 {
-    interface ISqlDAO<T> : IGenericDAO<T>
+    interface ISqlDAO<T> 
     {
         //void CreateQuery(string Query);
         //T GetFromQuery(string Query);    

@@ -8,7 +8,8 @@
         public bool PromoDept { get; set; }
         public bool PromoFront { get; set; }
         public bool InStock { get; set; }
-      
+        public string SKU { get; set; }
+        public Price price { get; set; }
 
         public class Builder
         {
@@ -24,6 +25,13 @@
             public Builder SetDescription(string Description)
             {
                 product.Description = Description;
+
+                return this;
+            }
+
+            public Builder SetSKU(string SKU)
+            {
+                product.SKU = SKU;
 
                 return this;
             }
@@ -48,8 +56,7 @@
 
                 return this;
             }
-
-
+            
             public Product Build()
             {
                 return product;
