@@ -35,7 +35,7 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Com.Parameters.Clear();
 
-            Com.Parameters.Add(new SqlParameter("@OrderNumber",order.OrderNumber));
+            Com.Parameters.Add(new SqlParameter("@OrderNumber", order.OrderNumber));
 
             return ((int)(Com.ExecuteScalar()) == 1 ? true : false);
 
@@ -63,12 +63,12 @@ namespace OrderProcessing.Database.Sql.Implementation
                 Order order = new Order.Builder()
                  .setCustomerNumber(row["customerID"].ToString())
                  .setOrderNumber(row["ordernumber"].ToString())
-                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
+                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))               
                  .Build();
 
                 var r = await GetItemsAsync(order.OrderNumber);
-                
-                r.ForEach(p=>
+
+                r.ForEach(p =>
                 {
 
                     order.Products.Add(p);
@@ -108,7 +108,7 @@ namespace OrderProcessing.Database.Sql.Implementation
                 Order order = new Order.Builder()
                  .setCustomerNumber(row["customerID"].ToString())
                  .setOrderNumber(row["ordernumber"].ToString())
-                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
+                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))            
                  .Build();
 
                 GetItemsAsync(order.OrderNumber).Result.ForEach(p =>
@@ -133,7 +133,7 @@ namespace OrderProcessing.Database.Sql.Implementation
         public Order GetByID(int id)
         {
             throw new NotImplementedException();
-            
+
         }
 
         public Order GetByName(string name)
@@ -194,7 +194,7 @@ namespace OrderProcessing.Database.Sql.Implementation
          * Add Item to order
          *  
          */
-        public void InsertOrderItem(string Sku,string OrderNumber,int Quantity)
+        public void InsertOrderItem(string Sku, string OrderNumber, int Quantity)
         {
 
             Con = CreateConnection();
@@ -208,10 +208,10 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Com.Parameters.Clear();
 
-            Com.Parameters.Add(new SqlParameter("@ordernumber",OrderNumber));
-            Com.Parameters.Add(new SqlParameter("@sku",Sku));
-            Com.Parameters.Add(new SqlParameter("@quantity",Quantity));
-            
+            Com.Parameters.Add(new SqlParameter("@ordernumber", OrderNumber));
+            Com.Parameters.Add(new SqlParameter("@sku", Sku));
+            Com.Parameters.Add(new SqlParameter("@quantity", Quantity));
+
             Com.ExecuteNonQuery();
 
             Com.Dispose();
@@ -235,7 +235,7 @@ namespace OrderProcessing.Database.Sql.Implementation
             Com.Parameters.Clear();
 
             Com.Parameters.Add(new SqlParameter("@CustomerID", order.CustomerNumber));
-           
+
             string OrderNumber = Convert.ToString(Com.ExecuteScalar());
 
             order.OrderNumber = OrderNumber;
@@ -246,14 +246,14 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             order.Products.ToList().ForEach(p =>
             {
-                InsertOrderItem(p.SKU,order.OrderNumber,p.Quantity);
+                InsertOrderItem(p.SKU, order.OrderNumber, p.Quantity);
             });
 
         }
 
         public Order Update(Order order)
         {
-            
+
             //do some checks on items before updating
             Con = CreateConnection();
 
@@ -279,21 +279,21 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             order.Products.ToList().ForEach(p =>
             {
-                UpdateOrderItem(p.SKU,p.Quantity,order.OrderNumber);
+                UpdateOrderItem(p.SKU, p.Quantity, order.OrderNumber);
 
             });
 
             return order;
         }
 
-        public void UpdateOrderItem(string sku,int quantity,string ordernumber)
+        public void UpdateOrderItem(string sku, int quantity, string ordernumber)
         {
 
 
             Con = CreateConnection();
 
             Query = "update order_product " +
-                "set ordernumber=@ordernumber," +           
+                "set ordernumber=@ordernumber," +
                 "sku=@sku," +
                 "quantity=@quantity where sku=@sku and ordernumber=@ordernumber";
 
@@ -302,10 +302,10 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Com.Parameters.Clear();
 
-            Com.Parameters.Add(new SqlParameter("@ordernumber", ordernumber));      
+            Com.Parameters.Add(new SqlParameter("@ordernumber", ordernumber));
             Com.Parameters.Add(new SqlParameter("@Sku", sku));
-            Com.Parameters.Add(new SqlParameter("@quantity",quantity));
-           
+            Com.Parameters.Add(new SqlParameter("@quantity", quantity));
+
             Com.ExecuteNonQuery();
 
             Com.Dispose();
