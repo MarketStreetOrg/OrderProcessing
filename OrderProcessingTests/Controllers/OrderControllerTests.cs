@@ -31,16 +31,17 @@ namespace OrderProcessing.Controllers.Tests
 
             Product product1 = new Product.Builder()
                                  .SetSKU(SKU)
+                                 .SetQuantity(12)
                                  .Build();
 
             Product product2 = new Product.Builder()
                                  .SetSKU(SKU2)
+                                 .SetQuantity(4)
                                  .Build();
 
             Order order = new Order();
-            order.Items = new Dictionary<Product, int>();
-            order.Items.Add(product1,12);
-            order.Items.Add(product2, 4);
+            order.Products.Add(product1);
+            order.Products.Add(product2);
             order.CustomerNumber = "1234";
 
             OrderService.Save(order);
@@ -54,11 +55,11 @@ namespace OrderProcessing.Controllers.Tests
 
             Product product = new Product.Builder()
                     .SetSKU(SKU)
+                    .SetQuantity(5)
                     .Build();
 
-            Order order = new Order();
-            order.Items = new Dictionary<Product, int>();
-            order.Items.Add(product, 5);
+            Order order = new Order();       
+            order.Products.Add(product);
             order.CustomerNumber = "1234";
             order.DateCreated = DateTime.Now;
             order.OrderStatus = OrderStatus.CREATED.ToString();
@@ -75,11 +76,11 @@ namespace OrderProcessing.Controllers.Tests
 
             Product product = new Product.Builder()
                    .SetSKU(SKU)
+                   .SetQuantity(4)
                    .Build();
 
             Order order = new Order();
-            order.Items = new Dictionary<Product, int>();
-            order.Items.Add(product, 5);
+            order.Products.Add(product);
             order.CustomerNumber = "1234";
             order.DateCreated = DateTime.Now;
             order.OrderStatus = OrderStatus.CREATED.ToString();

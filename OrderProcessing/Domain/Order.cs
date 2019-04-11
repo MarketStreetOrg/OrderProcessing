@@ -1,4 +1,5 @@
-﻿using OrderProcessing.Utilities;
+﻿using Newtonsoft.Json;
+using OrderProcessing.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,17 @@ namespace OrderProcessing.Domain
 {
     public class Order
     {
+
+        private HashSet<Product> products = new HashSet<Product>();
+
         public string OrderNumber { get; set; }
         public string CustomerNumber { get; set; }
         public string OrderStatus { get; set; }
-        public Dictionary<Product, int> Items { get; set; }
+        public HashSet<Product> Products
+        {
+            get { return products; }
+        }
+
         public DateTime DateCreated { get; set; }
 
         public class Builder
@@ -20,7 +28,7 @@ namespace OrderProcessing.Domain
 
             public Builder()
             {
-                order.Items = new Dictionary<Product, int>();
+                order.products = new HashSet<Product>();
             }
 
             public Builder setOrderNumber(string OrderNumber)
@@ -42,11 +50,13 @@ namespace OrderProcessing.Domain
 
             public Builder addItem(string sku, int quantity)
             {
+
                 Product product = new Product.Builder()
                                     .SetSKU(sku)
+                                    .SetQuantity(quantity)
                                     .Build();
 
-                order.Items.Add(product, quantity);
+                order.products.Add(product);
 
                 return this;
             }

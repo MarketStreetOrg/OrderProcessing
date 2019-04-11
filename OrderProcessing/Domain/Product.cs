@@ -4,12 +4,10 @@
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public bool PromoDept { get; set; }
-        public bool PromoFront { get; set; }
-        public bool InStock { get; set; }
+        public string Description { get; set; }      
         public string SKU { get; set; }
         public Price price { get; set; }
+        public int Quantity { get; set; }
 
         public class Builder
         {
@@ -36,27 +34,14 @@
                 return this;
             }
 
-            public Builder IsPromoDepartment(bool boolean)
+            public Builder SetQuantity(int Quantity)
             {
-                product.PromoDept = boolean;
+                product.Quantity = Quantity;
 
                 return this;
             }
 
-            public Builder IsPromoFront(bool boolean)
-            {
-                product.PromoFront = boolean;
 
-                return this;
-            }
-
-            public Builder IsInStock(bool boolean)
-            {
-                product.InStock = boolean;
-
-                return this;
-            }
-            
             public Product Build()
             {
                 return product;

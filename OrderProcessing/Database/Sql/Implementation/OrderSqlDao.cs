@@ -66,7 +66,14 @@ namespace OrderProcessing.Database.Sql.Implementation
                  .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
                  .Build();
 
-                order.Items = await GetItemsAsync(order.OrderNumber);
+                var r = await GetItemsAsync(order.OrderNumber);
+                
+                r.ForEach(p=>
+                {
+
+                    order.Products.Add(p);
+
+                });
 
                 orders.Add(order);
 
@@ -104,7 +111,12 @@ namespace OrderProcessing.Database.Sql.Implementation
                  .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
                  .Build();
 
-                order.Items = GetItemsAsync(order.OrderNumber).Result;
+                GetItemsAsync(order.OrderNumber).Result.ForEach(p =>
+                {
+
+                    order.Products.Add(p);
+
+                });
 
                 orders.Add(order);
 
@@ -134,9 +146,9 @@ namespace OrderProcessing.Database.Sql.Implementation
             throw new NotImplementedException();
         }
 
-        private async Task<Dictionary<Product, int>> GetItemsAsync(string OrderNumber)
+        private async Task<List<Product>> GetItemsAsync(string OrderNumber)
         {
-            Dictionary<Product, int> items = new Dictionary<Product, int>();
+            List<Product> items = new List<Product>();
 
             Con = CreateConnection();
 
@@ -164,7 +176,10 @@ namespace OrderProcessing.Database.Sql.Implementation
                    .Build();
 
                 int quantity = Convert.ToInt32(row["quantity"].ToString());
-                items.Add(product, quantity);
+
+                product.Quantity = quantity;
+
+                items.Add(product);
             }
 
             Com.Dispose();
@@ -207,7 +222,7 @@ namespace OrderProcessing.Database.Sql.Implementation
         //Save Order
         public void Save(Order order)
         {
-            if (order.Items == null || order.Items.Count == 0) throw new EmptyOrderException();
+            if (order.Products == null || order.Products.Count == 0) throw new EmptyOrderException();
 
             Con = CreateConnection();
 
@@ -229,9 +244,9 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Con.Close();
 
-            order.Items.ToList().ForEach(p =>
+            order.Products.ToList().ForEach(p =>
             {
-                InsertOrderItem(p.Key.SKU,order.OrderNumber,order.Items[p.Key]);
+                InsertOrderItem(p.SKU,order.OrderNumber,p.Quantity);
             });
 
         }
@@ -262,9 +277,9 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Con.Close();
 
-            order.Items.ToList().ForEach(p =>
+            order.Products.ToList().ForEach(p =>
             {
-                UpdateOrderItem(p.Key.SKU,order.Items[p.Key],order.OrderNumber);
+                UpdateOrderItem(p.SKU,p.Quantity,order.OrderNumber);
 
             });
 
