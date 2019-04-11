@@ -20,9 +20,9 @@ namespace OrderProcessing.Service
         }
 
       
-        public Order GetSingle(string Name)
+        public Order GetSingle(string OrderNumber)
         {
-            throw new System.NotImplementedException();
+            return orderDao.GetByName(OrderNumber);
         }
 
         public Order GetSingle(Order entity)
@@ -45,6 +45,8 @@ namespace OrderProcessing.Service
             throw new System.NotImplementedException();
         }
 
+        public void Delete(string OrderNumber)=>orderDao.Delete(OrderNumber);
+        
         public Order Update(Order order)
         {
             return orderDao.Update(order);

@@ -89,5 +89,18 @@ namespace OrderProcessing.Controllers.Tests
             Assert.AreEqual(true, OrderService.Exists(order));
         }
 
+        [TestMethod]
+        public void TestDeleteOrder()
+        {
+            string OrderNumber = "00000006";
+
+            OrderService.Delete(OrderNumber);
+        }
+
+        [TestMethod]
+        public void TestGetSingleOrder()
+        {
+            Assert.IsNotNull(OrderService.GetSingle("00000013"));
+        }
     }
 }

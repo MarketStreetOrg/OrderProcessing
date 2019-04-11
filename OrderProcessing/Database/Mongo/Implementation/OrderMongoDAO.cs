@@ -14,6 +14,11 @@ namespace OrderProcessing.Database.Mongo.Implementation
             throw new NotImplementedException();
         }
 
+        public void Delete(string param)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Exists(Order model)
         {
             throw new NotImplementedException();

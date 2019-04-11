@@ -24,6 +24,29 @@ namespace OrderProcessing.Database.Sql.Implementation
             throw new NotImplementedException();
         }
 
+        public void Delete(string OrderNumber)
+        {
+            Con = CreateConnection();
+
+            Query = "DeleteOrder";
+
+            Com.Connection = Con;
+
+            Com.CommandType = CommandType.StoredProcedure;
+
+            Com.CommandText = Query;
+
+            Com.Parameters.Clear();
+
+            Com.Parameters.Add(new SqlParameter("@OrderNumber", OrderNumber));
+
+            Com.ExecuteNonQuery();
+
+            Com.Dispose();
+
+            Con.Close();
+        }
+
         public bool Exists(Order order)
         {
             Con = CreateConnection();
@@ -40,6 +63,7 @@ namespace OrderProcessing.Database.Sql.Implementation
             return ((int)(Com.ExecuteScalar()) == 1 ? true : false);
 
         }
+
 
         public async Task<List<Order>> GetAllAsync()
         {
@@ -63,7 +87,7 @@ namespace OrderProcessing.Database.Sql.Implementation
                 Order order = new Order.Builder()
                  .setCustomerNumber(row["customerID"].ToString())
                  .setOrderNumber(row["ordernumber"].ToString())
-                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))               
+                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
                  .Build();
 
                 var r = await GetItemsAsync(order.OrderNumber);
@@ -108,7 +132,7 @@ namespace OrderProcessing.Database.Sql.Implementation
                 Order order = new Order.Builder()
                  .setCustomerNumber(row["customerID"].ToString())
                  .setOrderNumber(row["ordernumber"].ToString())
-                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))            
+                 .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
                  .Build();
 
                 GetItemsAsync(order.OrderNumber).Result.ForEach(p =>
@@ -136,9 +160,37 @@ namespace OrderProcessing.Database.Sql.Implementation
 
         }
 
-        public Order GetByName(string name)
+        public Order GetByName(string OrderNumber)
         {
-            throw new NotImplementedException();
+            Order order = null;
+
+            Con = CreateConnection();
+            Query = "SelectOrder";
+            Com.CommandText = Query;
+            Com.Connection = Con;
+            Com.CommandType = CommandType.StoredProcedure;
+
+            Com.Parameters.Add(new SqlParameter("@OrderNumber", OrderNumber));
+
+            DataAdapter.SelectCommand = Com;
+
+            DataTable dataTable = new DataTable();
+
+            DataAdapter.Fill(dataTable);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                order = new Order.Builder()
+                  .setCustomerNumber(row["customerID"].ToString())
+                  .setOrderNumber(row["ordernumber"].ToString())
+                  .setDate(Convert.ToDateTime(row["datecreated"].ToString()))
+                  .Build();
+
+                GetItemsAsync(OrderNumber).Result.ForEach(i => order.Products.Add(i));
+
+            }
+
+            return order;
         }
 
         public List<Order> GetByQuery(string Query)
@@ -152,10 +204,11 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Con = CreateConnection();
 
-            Query = "select * from order_products_view where ordernumber=@OrderNumber";
+            Query = "selectOrdersWithItems";
 
             Com.CommandText = Query;
             Com.Connection = Con;
+            Com.CommandType = CommandType.StoredProcedure;
 
             Com.Parameters.Clear();
 

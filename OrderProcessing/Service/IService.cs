@@ -22,6 +22,8 @@ namespace OrderProcessing.Service
 
         void Delete(int id);
 
+        void Delete(string param);
+
         /// <summary>
         /// <paramref name="t"/>
         /// </summary>

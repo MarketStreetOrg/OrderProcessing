@@ -14,6 +14,7 @@ namespace OrderProcessing.DAO.Generic
         void Save(T model);
         T Update(T Model);
         void Delete(int id);
+        void Delete(string param);
         Boolean Exists(T model);
         Task<List<T>> GetAllAsync();
     }
