@@ -15,8 +15,8 @@ namespace OrderProcessing
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-           
-          
+
         }
+
     }
 }

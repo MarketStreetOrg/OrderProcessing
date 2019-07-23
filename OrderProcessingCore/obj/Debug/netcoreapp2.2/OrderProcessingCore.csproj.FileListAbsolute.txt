@@ -1,0 +1,14 @@
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\bin\Debug\netcoreapp2.2\OrderProcessingCore.deps.json
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\bin\Debug\netcoreapp2.2\OrderProcessingCore.runtimeconfig.json
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\bin\Debug\netcoreapp2.2\OrderProcessingCore.runtimeconfig.dev.json
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\bin\Debug\netcoreapp2.2\OrderProcessingCore.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\bin\Debug\netcoreapp2.2\OrderProcessingCore.pdb
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.csprojAssemblyReference.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.csproj.CoreCompileInputs.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.RazorAssemblyInfo.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.RazorAssemblyInfo.cs
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.AssemblyInfoInputs.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.AssemblyInfo.cs
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.RazorTargetAssemblyInfo.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCore\obj\Debug\netcoreapp2.2\OrderProcessingCore.pdb

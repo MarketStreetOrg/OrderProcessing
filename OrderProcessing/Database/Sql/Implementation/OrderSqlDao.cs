@@ -64,7 +64,6 @@ namespace OrderProcessing.Database.Sql.Implementation
 
         }
 
-
         public async Task<List<Order>> GetAllAsync()
         {
             List<Order> orders = new List<Order>();
@@ -100,7 +99,6 @@ namespace OrderProcessing.Database.Sql.Implementation
                 });
 
                 orders.Add(order);
-
             }
 
             Com.Dispose();
@@ -137,9 +135,7 @@ namespace OrderProcessing.Database.Sql.Implementation
 
                 GetItemsAsync(order.OrderNumber).Result.ForEach(p =>
                 {
-
                     order.Products.Add(p);
-
                 });
 
                 orders.Add(order);
@@ -152,7 +148,6 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             return orders;
         }
-
 
         public Order GetByID(int id)
         {
@@ -241,7 +236,6 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             return items;
         }
-
 
         /*
          * Add Item to order
@@ -341,8 +335,6 @@ namespace OrderProcessing.Database.Sql.Implementation
 
         public void UpdateOrderItem(string sku, int quantity, string ordernumber)
         {
-
-
             Con = CreateConnection();
 
             Query = "update order_product " +

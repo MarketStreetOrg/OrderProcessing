@@ -1,0 +1,17 @@
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.deps.json
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.runtimeconfig.json
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.runtimeconfig.dev.json
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.pdb
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCore.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\bin\Debug\netcoreapp2.2\OrderProcessingCore.pdb
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.csprojAssemblyReference.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.AssemblyInfoInputs.cache
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.AssemblyInfo.cs
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.csproj.CopyComplete
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessingCoreUnitTests\obj\Debug\netcoreapp2.2\OrderProcessingCoreUnitTests.pdb

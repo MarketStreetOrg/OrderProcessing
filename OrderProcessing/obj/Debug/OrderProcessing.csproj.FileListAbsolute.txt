@@ -194,3 +194,6 @@ C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\MongoDB.Driver.
 C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\MongoDB.Driver.Core.xml
 C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\RabbitMQ.Client.xml
 C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\System.Buffers.xml
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\Microsoft.Owin.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\Owin.dll
+C:\Users\Steven\source\repos\OrderProcessing\OrderProcessing\bin\Microsoft.Owin.xml
