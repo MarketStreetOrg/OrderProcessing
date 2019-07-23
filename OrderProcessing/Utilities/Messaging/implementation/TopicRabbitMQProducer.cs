@@ -42,6 +42,7 @@ namespace OrderProcessing.Utilities.Messaging.implementation
             byte[] message = System.Text.Encoding.UTF8.GetBytes(msg);
 
             model.BasicPublish(Exchange, Routingkey, null, message);
+            
         }
 
         public void Send(object obj, string Queue, string RoutingKey)

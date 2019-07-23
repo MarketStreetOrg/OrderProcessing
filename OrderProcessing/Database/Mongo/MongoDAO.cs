@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using OrderProcessing.Database.Mongo;
 using OrderProcessing.Database.Source;
 
 namespace OrderProcessing.Database
@@ -7,8 +8,6 @@ namespace OrderProcessing.Database
     {
         public MongoClient mongoClient { get; }
         public IMongoDatabase mongoDB { get; }
-        
-
         public MongoDAO()
         {
             GlobalConfigurations.Configuration = new LocalMongoDBConfig();

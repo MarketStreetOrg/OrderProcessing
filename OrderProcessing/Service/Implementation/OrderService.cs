@@ -27,7 +27,7 @@ namespace OrderProcessing.Service
 
         public Order GetSingle(Order entity)
         {
-            throw new System.NotImplementedException();
+            return (entity.OrderNumber!=null)?orderDao.GetByName(entity.OrderNumber):null;
         }
 
         public List<Order> GetAll()

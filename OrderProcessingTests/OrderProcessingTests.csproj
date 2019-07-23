@@ -63,12 +63,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OrderProcessing\OrderProcessing.csproj">
-      <Project>{99C83FCE-DF61-41B7-99BF-14C38DD6E950}</Project>
-      <Name>OrderProcessing</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
