@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using OrderProcessing.Utilities.Configurations;
+using OrderProcessingCore.Utilities.Configurations;
 using OrderProcessingCore.Utilities.Configurations;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 
-namespace OrderProcessing.Database.Source
+namespace OrderProcessingCore.Database.Source
 {
     public class LocalSQLConfig
     {

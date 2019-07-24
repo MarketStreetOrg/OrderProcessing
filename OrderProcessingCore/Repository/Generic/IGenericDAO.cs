@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.DAO.Generic
+namespace OrderProcessingCore.DAO.Generic
 {
     public interface IGenericDAO<T>
     {

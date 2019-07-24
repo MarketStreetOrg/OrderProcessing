@@ -1,4 +1,4 @@
-﻿namespace OrderProcessing.Utilities
+﻿namespace OrderProcessingCore.Utilities
 {
     public enum OrderStatus
     {

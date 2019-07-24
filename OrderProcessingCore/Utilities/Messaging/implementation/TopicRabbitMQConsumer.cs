@@ -1,7 +1,7 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace OrderProcessing.Utilities.Messaging.implementation
+namespace OrderProcessingCore.Utilities.Messaging.implementation
 {
     public class TopicRabbitMQConsumer : RabbitMQ, IRabbitMQConsumer
     {

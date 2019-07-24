@@ -1,12 +1,12 @@
-﻿using OrderProcessing.DAO.Generic;
-using OrderProcessing.Domain;
+﻿using OrderProcessingCore.DAO.Generic;
+using OrderProcessingCore.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.DAO
+namespace OrderProcessingCore.DAO
 {
     public interface IOrdersDAO : IGenericDAO<Order>
     {

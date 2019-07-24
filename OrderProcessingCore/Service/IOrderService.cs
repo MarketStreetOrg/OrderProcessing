@@ -1,6 +1,6 @@
-﻿using OrderProcessing.Domain;
+﻿using OrderProcessingCore.Domain;
 
-namespace OrderProcessing.Service
+namespace OrderProcessingCore.Service
 {
     public interface IOrderService: IService<Order>
     {

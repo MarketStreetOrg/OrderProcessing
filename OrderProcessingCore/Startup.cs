@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OrderProcessing.DAO;
-using OrderProcessing.Database.Sql.Implementation;
-using OrderProcessing.Service;
+using OrderProcessingCore.DAO;
+using OrderProcessingCore.Database.Sql.Implementation;
+using OrderProcessingCore.Service;
 using OrderProcessingCore.Utilities.Configurations;
 
 namespace OrderProcessingCore
@@ -23,8 +23,8 @@ namespace OrderProcessingCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IOrderService>(new OrderService(new OrderSqlDao()));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

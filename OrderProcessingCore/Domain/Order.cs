@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
-using OrderProcessing.Utilities;
+using OrderProcessingCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace OrderProcessing.Domain
+namespace OrderProcessingCore.Domain
 {
     public class Order
     {

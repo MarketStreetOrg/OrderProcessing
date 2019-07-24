@@ -1,7 +1,7 @@
-﻿using OrderProcessing.DAO;
-using OrderProcessing.Domain;
-using OrderProcessing.Utilities;
-using OrderProcessing.Utilities.Exceptions;
+﻿using OrderProcessingCore.DAO;
+using OrderProcessingCore.Domain;
+using OrderProcessingCore.Utilities;
+using OrderProcessingCore.Utilities.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace OrderProcessing.Database.Sql.Implementation
+namespace OrderProcessingCore.Database.Sql.Implementation
 {
     public class OrderSqlDao : SqlDAO, ISqlDAO<Order>, IOrdersDAO
     {
@@ -67,10 +67,11 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Con = CreateConnection();
 
-            Query = "select * from ordersView";
-
+            Query = "selectOrders";
+          
             Com.CommandText = Query;
             Com.Connection = Con;
+            Com.CommandType = CommandType.StoredProcedure;
 
             DataAdapter.SelectCommand = Com;
 
@@ -111,8 +112,9 @@ namespace OrderProcessing.Database.Sql.Implementation
 
             Con = CreateConnection();
 
-            Query = "select * from ordersView";
+            Query = "SelectOrders";
 
+            Com.CommandType = CommandType.StoredProcedure;
             Com.CommandText = Query;
             Com.Connection = Con;
 
@@ -161,6 +163,8 @@ namespace OrderProcessing.Database.Sql.Implementation
             Com.CommandText = Query;
             Com.Connection = Con;
             Com.CommandType = CommandType.StoredProcedure;
+
+            Com.Parameters.Clear();
 
             Com.Parameters.Add(new SqlParameter("@OrderNumber", OrderNumber));
 

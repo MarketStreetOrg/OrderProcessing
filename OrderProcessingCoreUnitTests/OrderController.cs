@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using OrderProcessing.Database.Sql.Implementation;
-using OrderProcessing.Domain;
-using OrderProcessing.Service;
-using OrderProcessing.Utilities;
+using OrderProcessingCore.Database.Sql.Implementation;
+using OrderProcessingCore.Domain;
+using OrderProcessingCore.Service;
+using OrderProcessingCore.Utilities;
 using System;
 
 namespace OrderProcessingUnitTests

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace OrderProcessing.Utilities.Messaging
+namespace OrderProcessingCore.Utilities.Messaging
 {
     public class DirectRabbitMQProducer :RabbitMQ, IRabbitMQProducer
     {

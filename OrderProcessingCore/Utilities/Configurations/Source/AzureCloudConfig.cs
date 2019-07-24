@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using OrderProcessing.Utilities;
+using OrderProcessingCore.Utilities;
 using OrderProcessingCore.Utilities.Configurations;
 using System;
 
-namespace OrderProcessing.Database.Source
+namespace OrderProcessingCore.Database.Source
 {
     public class AzureCloudConfig
     {
