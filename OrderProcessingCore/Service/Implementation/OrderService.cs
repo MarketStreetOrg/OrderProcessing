@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using OrderProcessing.DAO;
-using OrderProcessing.DAO.Generic;
-using OrderProcessing.Database.Mongo.Implementation;
-using OrderProcessing.Database.Sql.Implementation;
-using OrderProcessing.Domain;
+using OrderProcessingCore.DAO;
+using OrderProcessingCore.DAO.Generic;
+using OrderProcessingCore.Database.Mongo.Implementation;
+using OrderProcessingCore.Database.Sql.Implementation;
+using OrderProcessingCore.Domain;
 
-namespace OrderProcessing.Service
+namespace OrderProcessingCore.Service
 {
     public class OrderService : IOrderService
     {

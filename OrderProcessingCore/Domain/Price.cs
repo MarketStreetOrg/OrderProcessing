@@ -1,4 +1,4 @@
-﻿namespace OrderProcessing.Domain
+﻿namespace OrderProcessingCore.Domain
 {
     public class Price
     {

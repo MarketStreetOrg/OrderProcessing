@@ -1,13 +1,13 @@
 ﻿using MongoDB.Driver;
-using OrderProcessing.Domain;
-using OrderProcessing.Utilities.Exceptions;
+using OrderProcessingCore.Domain;
+using OrderProcessingCore.Utilities.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.Database.Mongo.Implementation
+namespace OrderProcessingCore.Database.Mongo.Implementation
 {
     public class OrderMongoDAO : MongoDAO, IMongoDAO<Order>
     {

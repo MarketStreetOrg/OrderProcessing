@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
-using OrderProcessing.Database.Source;
+using OrderProcessingCore.Database.Source;
 using OrderProcessingCore.Utilities.Configurations;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace OrderProcessing.Database
+namespace OrderProcessingCore.Database
 {
     /**
      *Should be an abstract class that implements the methods from the DAO interface 
@@ -37,10 +37,10 @@ namespace OrderProcessing.Database
 
             if (Connected())
             {
-                Com.Dispose();
                 Con.Close();
             }
 
+            Com = new SqlCommand();
             Con.Open();
 
             return Con;

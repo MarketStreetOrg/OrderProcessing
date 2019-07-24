@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using RabbitMQ.Client;
 
-namespace OrderProcessing.Utilities.Messaging
+namespace OrderProcessingCore.Utilities.Messaging
 {
     public abstract class RabbitMQ
     {

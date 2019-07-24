@@ -1,4 +1,4 @@
-﻿namespace OrderProcessing.Utilities.AOP
+﻿namespace OrderProcessingCore.Utilities.AOP
 {
     //[Serializable]
     //[MulticastAttributeUsage(MulticastTargets.Method)]

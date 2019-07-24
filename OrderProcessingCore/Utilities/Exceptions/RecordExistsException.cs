@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace OrderProcessing.Utilities.Exceptions
+namespace OrderProcessingCore.Utilities.Exceptions
 {
     [Serializable]
     public class RecordExistsException : Exception
