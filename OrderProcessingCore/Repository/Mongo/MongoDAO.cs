@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
-using OrderProcessing.Database.Mongo;
-using OrderProcessing.Database.Source;
+using OrderProcessingCore.Database.Mongo;
+using OrderProcessingCore.Database.Source;
 using OrderProcessingCore.Utilities.Configurations;
 
-namespace OrderProcessing.Database
+namespace OrderProcessingCore.Database
 {
     public abstract class MongoDAO
     {

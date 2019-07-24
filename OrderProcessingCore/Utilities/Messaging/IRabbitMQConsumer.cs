@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.Utilities.Messaging
+namespace OrderProcessingCore.Utilities.Messaging
 {
     public interface IRabbitMQConsumer
     {

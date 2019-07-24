@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.Utilities.Configurations
+namespace OrderProcessingCore.Utilities.Configurations
 {
     public interface IConfig
     {

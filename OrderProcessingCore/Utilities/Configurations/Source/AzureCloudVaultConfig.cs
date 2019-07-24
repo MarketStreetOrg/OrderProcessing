@@ -1,8 +1,8 @@
-﻿using OrderProcessing.Database.Source;
+﻿using OrderProcessingCore.Database.Source;
 using OrderProcessingCore.Utilities.Configurations;
 using System.Threading.Tasks;
 
-namespace OrderProcessing.Database.Cloud
+namespace OrderProcessingCore.Database.Cloud
 {
     public class AzureCloudVaultConfig
     {

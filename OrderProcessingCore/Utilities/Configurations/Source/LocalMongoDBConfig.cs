@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 
-namespace OrderProcessing.Database.Source
+namespace OrderProcessingCore.Database.Source
 {
     public class LocalMongoDBConfig
     {
