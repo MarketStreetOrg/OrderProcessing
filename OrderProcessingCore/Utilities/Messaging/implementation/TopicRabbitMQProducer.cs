@@ -31,7 +31,7 @@ namespace OrderProcessingCore.Utilities.Messaging.implementation
             this.Exchange = Exchange;
             this.Queue = Queue;
             model.ExchangeDeclare(this.Exchange,ExchangeType.Topic,true);
-            model.QueueDeclare(this.Queue,false,false,false,null);
+            model.QueueDeclare(this.Queue,true,false,false,null);
         }
 
         public void Send(string msg, string Routingkey)

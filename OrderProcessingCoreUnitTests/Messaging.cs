@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OrderProcessingCore.Utilities.Messaging;
 using OrderProcessingCore.Utilities.Messaging.implementation;
-
+using System.Threading;
 
 namespace OrderProcessingCoreUnitTests
 {
@@ -14,7 +14,11 @@ namespace OrderProcessingCoreUnitTests
         [Test]
         public void TestSendOrder()
         {
-            rabbitMQProducer.Send("2323239", "fulfillment.orders");
+            //for (int i = 0; i < 100000; i++)
+            //{
+                rabbitMQProducer.Send("1234567", "fulfillment.orders");
+                //Thread.Sleep();
+            //}
         }
 
     }
