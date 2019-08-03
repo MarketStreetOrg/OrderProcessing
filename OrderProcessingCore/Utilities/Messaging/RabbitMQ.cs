@@ -16,11 +16,11 @@ namespace OrderProcessingCore.Utilities.Messaging
        
         public RabbitMQ()
         {
-            string Username = PropertyConfigurations.Read("username","RabbitMQ");
-            string Password = PropertyConfigurations.Read("password","RabbitMQ");
+            //string Username = PropertyConfigurations.Read("username","RabbitMQ");
+            //string Password = PropertyConfigurations.Read("password","RabbitMQ");
 
-            connectionFactory.UserName = Username;
-            connectionFactory.Password = Password;
+            connectionFactory.UserName = "guest";
+            connectionFactory.Password = "guest";
 
             connection = connectionFactory.CreateConnection();
         }

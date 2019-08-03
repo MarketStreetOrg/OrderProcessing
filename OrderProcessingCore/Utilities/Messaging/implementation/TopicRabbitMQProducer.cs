@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace OrderProcessingCore.Utilities.Messaging.implementation
@@ -29,7 +30,7 @@ namespace OrderProcessingCore.Utilities.Messaging.implementation
             model = connection.CreateModel();
             this.Exchange = Exchange;
             this.Queue = Queue;
-            model.ExchangeDeclare(this.Exchange,ExchangeType.Topic);
+            model.ExchangeDeclare(this.Exchange,ExchangeType.Topic,true);
             model.QueueDeclare(this.Queue,false,false,false,null);
         }
 
@@ -37,9 +38,10 @@ namespace OrderProcessingCore.Utilities.Messaging.implementation
         {
             model.QueueBind(Queue, Exchange, Routingkey, null);
 
-            byte[] message = System.Text.Encoding.UTF8.GetBytes(msg);
+            var body = Encoding.UTF8.GetBytes(msg);
 
-            model.BasicPublish(Exchange, Routingkey, null, message);
+            model.BasicPublish(Exchange, Routingkey, null, body);
+            
         }
 
         public void Send(object obj, string Queue, string RoutingKey)
@@ -47,18 +49,20 @@ namespace OrderProcessingCore.Utilities.Messaging.implementation
             JObject jsonObject = JObject.FromObject(obj);
             byte[] message = System.Text.Encoding.UTF8.GetBytes(jsonObject.ToString());
             model.QueueBind(Queue, this.Exchange, RoutingKey, null);
-            model.BasicPublish(this.Exchange, Queue, null, message);
+            
+            model.BasicPublish(this.Exchange, Queue, null,message);
         }
 
         public void Send(object obj, string Routingkey)
         {
             model.QueueBind(Queue, Exchange, Routingkey, null);
 
-            JObject jsonObject = JObject.FromObject(obj);
+            JObject jsonObject =JObject.FromObject(obj);
 
             byte[] message = System.Text.Encoding.UTF8.GetBytes(jsonObject.ToString());
 
             model.BasicPublish(Exchange, Routingkey, null, message);
+           
         }
     }
 }
